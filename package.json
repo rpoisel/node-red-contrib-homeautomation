@@ -1,0 +1,19 @@
+{
+    "name"         : "node-red-contrib-homeautomation",
+    "version"      : "0.0.1",
+    "description"  : "Nodes that implement home automation functionality",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/rpoisel/node-red-contrib-homeautomation.git"
+     },
+    "dependencies": {
+     },
+    "keywords": [ "node-red" ],
+    "author": "Rainer Poisel",
+    "node-red"     : {
+        "nodes": {
+            "blind": "homeautomation/blind.js"
+        }
+    },
+    "license": "MIT"
+}
