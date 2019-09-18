@@ -13,14 +13,23 @@
         "gulp-ssh": "^0.7.0",
         "typescript": "^3.6.3"
     },
+    "devDependencies": {
+        "@types/node": "^12.0.10",
+        "@types/node-red": "^0.20.0",
+        "gulp-shell": "^0.7.1",
+        "node-red": "^0.20.7"
+    },
     "keywords": [
         "node-red"
     ],
     "author": "Rainer Poisel",
     "node-red": {
         "nodes": {
-            "blind": "homeautomation/blind.js"
+            "blind": "homeautomation/blindNode.js"
         }
     },
-    "license": "MIT"
+    "license": "MIT",
+    "scripts": {
+        "build-ts": "tsc"
+    }
 }
