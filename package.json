@@ -25,7 +25,8 @@
     "author": "Rainer Poisel",
     "node-red": {
         "nodes": {
-            "blind": "homeautomation/blindNode.js"
+            "blind": "homeautomation/blindNode.js",
+            "relayModule": "homeautomation/relaysNode.js"
         }
     },
     "license": "MIT",
