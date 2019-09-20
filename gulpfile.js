@@ -4,6 +4,7 @@ var fs = require('fs');
 var gulp = require('gulp')
 var shell = require('gulp-shell')
 var GulpSSH = require('gulp-ssh')
+var ts = require('gulp-typescript');
 
 var config = {
   host: '192.168.88.241',
@@ -17,7 +18,28 @@ var gulpSSH = new GulpSSH({
   sshConfig: config
 })
 
-gulp.task('build-module', shell.task('npm run-script build-ts'));
+var tsProject = ts.createProject(
+  {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES5",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "node_modules/*",
+        "homeautomation/*"
+      ]
+    }
+  }
+)
+
+gulp.task('build-module', function () {
+  return gulp.src('homeautomation/*.ts').pipe(tsProject()).js.pipe(gulp.dest('dist'));
+})
 
 gulp.task('uninstall-module', function () {
   return gulpSSH

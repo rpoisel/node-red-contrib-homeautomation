@@ -1,14 +1,22 @@
 <script type="text/javascript">
-    RED.nodes.registerType('relays',{
+    RED.nodes.registerType('relays', {
         category: 'Home Automation',
         color: '#d54e23',
         defaults: {
-            name: {value:""}
+            name: { value: "" },
+            input0: { value: "" },
+            input1: { value: "" },
+            input2: { value: "" },
+            input3: { value: "" },
+            input4: { value: "" },
+            input5: { value: "" },
+            input6: { value: "" },
+            input7: { value: "" }
         },
-        inputs:1,
-        outputs:0,
+        inputs: 1,
+        outputs: 0,
         icon: "font-awesome/fa-microchip",
-        label: function() {
+        label: function () {
             return this.name || "relays";
         }
     });
@@ -18,6 +26,38 @@
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-input0"><i class="icon-tag"></i> Input 0</label>
+        <input type="text" id="node-input-input0" placeholder="Input 0">
+    </div>
+    <div class="form-row">
+        <label for="node-input-input1"><i class="icon-tag"></i> Input 1</label>
+        <input type="text" id="node-input-input1" placeholder="Input 1">
+    </div>
+    <div class="form-row">
+        <label for="node-input-input2"><i class="icon-tag"></i> Input 2</label>
+        <input type="text" id="node-input-input2" placeholder="Input 2">
+    </div>
+    <div class="form-row">
+        <label for="node-input-input3"><i class="icon-tag"></i> Input 3</label>
+        <input type="text" id="node-input-input3" placeholder="Input 3">
+    </div>
+    <div class="form-row">
+        <label for="node-input-input4"><i class="icon-tag"></i> Input 4</label>
+        <input type="text" id="node-input-input4" placeholder="Input 4">
+    </div>
+    <div class="form-row">
+        <label for="node-input-input5"><i class="icon-tag"></i> Input 5</label>
+        <input type="text" id="node-input-input5" placeholder="Input 5">
+    </div>
+    <div class="form-row">
+        <label for="node-input-input6"><i class="icon-tag"></i> Input 6</label>
+        <input type="text" id="node-input-input6" placeholder="Input 6">
+    </div>
+    <div class="form-row">
+        <label for="node-input-input7"><i class="icon-tag"></i> Input 7</label>
+        <input type="text" id="node-input-input7" placeholder="Input 7">
     </div>
 </script>
 

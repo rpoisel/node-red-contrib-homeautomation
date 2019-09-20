@@ -1,26 +1,26 @@
 <script type="text/javascript">
-    RED.nodes.registerType('blind', {
+    RED.nodes.registerType('inputs', {
         category: 'Home Automation',
-        color: '#a6bbcf',
+        color: '#42b53d',
         defaults: {
             name: { value: "" }
         },
         inputs: 1,
         outputs: 1,
-        icon: "font-awesome/fa-window-maximize",
+        icon: "font-awesome/fa-microchip",
         label: function () {
-            return this.name || "blind";
+            return this.name || "inputs";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="blind">
+<script type="text/x-red" data-template-name="inputs">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="blind">
-    <p>A window blind logic block</p>
+<script type="text/x-red" data-help-name="inputs">
+    <p>A digital inputs logic block</p>
 </script>

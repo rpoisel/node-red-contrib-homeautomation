@@ -17,6 +17,7 @@
         "@types/node": "^12.0.10",
         "@types/node-red": "^0.20.0",
         "gulp-shell": "^0.7.1",
+        "gulp-typescript": "^5.0.1",
         "node-red": "^0.20.7"
     },
     "keywords": [
@@ -25,12 +26,10 @@
     "author": "Rainer Poisel",
     "node-red": {
         "nodes": {
+            "inputsModule": "homeautomation/inputsNode.js",
             "blind": "homeautomation/blindNode.js",
             "relayModule": "homeautomation/relaysNode.js"
         }
     },
-    "license": "MIT",
-    "scripts": {
-        "build-ts": "tsc"
-    }
+    "license": "MIT"
 }
