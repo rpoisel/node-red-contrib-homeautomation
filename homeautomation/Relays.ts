@@ -1,14 +1,14 @@
-import { I2cBus, openSync } from 'i2c-bus';
+import { I2cBus, openSync } from "i2c-bus";
 
 export class Relays {
-    id: string;
+    private id: string;
     constructor(id: string) {
         this.id = id;
     }
-    getId(): string {
+    public getId(): string {
         return this.id;
     }
-    writeOutputs(msg: any): void {
-
+    public writeOutputs(msg: any): void {
+        // nothing to do here for the moment
     }
 }

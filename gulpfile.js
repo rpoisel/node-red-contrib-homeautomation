@@ -70,6 +70,6 @@ gulp.task('restart-nodered', function () {
 
 gulp.task('default',
   gulp.series(
-    'build-module', 'tslint', 'uninstall-module', 'remove-module',
+    'tslint', 'build-module', 'uninstall-module', 'remove-module',
     gulp.parallel('deploy-module-meta', 'deploy-module-html', 'deploy-module-js'),
     'install-module', 'restart-nodered'), function () { });
