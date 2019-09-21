@@ -14,6 +14,7 @@
         "typescript": "^3.6.3"
     },
     "devDependencies": {
+        "@types/i2c-bus": "^1.0.24",
         "@types/node": "^12.0.10",
         "@types/node-red": "^0.20.0",
         "gulp-shell": "^0.7.1",

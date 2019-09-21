@@ -1,3 +1,5 @@
+import { I2cBus, openSync } from 'i2c-bus';
+
 export class Relays {
     id: string;
     constructor(id: string) {
