@@ -2,7 +2,7 @@ import { II2cNode } from "II2cNode";
 import { Node, NodeProperties, Red } from "node-red";
 
 interface IInputsNode extends Node {
-    bus: II2cNode;
+    busNode: II2cNode;
 }
 
 interface IInputsProperties extends NodeProperties {
@@ -19,8 +19,16 @@ export = (RED: Red) => {
             this.error("Cannot find assigned bus object!");
             // TODO throw exception?
         }
-        this.bus = RED.nodes.getNode(props.bus) as II2cNode;
-        this.log("Configured I2C bus: " + this.bus.bus + " with a handle of " + this.bus.busHandle);
+        this.busNode = RED.nodes.getNode(props.bus) as II2cNode;
+        this.log("Configured I2C bus @ " + this.busNode.i2cBusManager.getBusPath() + ".");
+
+        this.busNode.i2cBusManager.subscribeListener((busHandle: number) => {
+            const msg = {
+                payload: "Input node " + this.name + " at bus " + busHandle,
+            };
+            this.send(msg);
+        });
+
         RED.nodes.createNode(this, props);
     });
 };
