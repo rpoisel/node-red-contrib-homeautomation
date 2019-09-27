@@ -3,6 +3,7 @@
         category: 'config',
         defaults: {
             bus: { value: "/dev/i2c-1", required: true },
+            pollfreq: { value: "1000", required: true },
         },
         label: function () {
             return this.bus;
@@ -12,7 +13,11 @@
 
 <script type="text/x-red" data-template-name="i2cConfig">
     <div class="form-row">
-        <label for="node-input-bus"><i class="icon-tag"></i> Bus</label>
-        <input type="text" id="node-input-bus" placeholder="/dev/i2c-1">
+        <label for="node-config-input-bus"><i class="icon-tag"></i> Bus</label>
+        <input type="text" id="node-config-input-bus" placeholder="/dev/i2c-1">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-pollfreq"><i class="icon-tag"></i> Polling Frequency (ms)</label>
+        <input type="text" id="node-config-input-pollfreq" placeholder="1000">
     </div>
 </script>

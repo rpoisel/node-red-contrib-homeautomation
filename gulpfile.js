@@ -56,6 +56,12 @@ gulp.task('deploy-module-js', function () {
     .pipe(gulpSSH.dest('/home/rpoisel/node-red-data/mynodes/node-red-contrib-homeautomation/homeautomation'));
 })
 
+gulp.task('fix-permissions', function () {
+  return gulpSSH
+    .shell(['chown -R rpoisel:users /home/rpoisel'], { filePath: 'commands.log' })
+    .pipe(gulp.dest('logs'));
+})
+
 gulp.task('install-module', function () {
   return gulpSSH
     .shell(['docker exec -w /data/mynodes nodered npm install node-red-contrib-homeautomation'], { filePath: 'commands.log' })
@@ -72,4 +78,5 @@ gulp.task('default',
   gulp.series(
     'tslint', 'build-module', 'uninstall-module', 'remove-module',
     gulp.parallel('deploy-module-meta', 'deploy-module-html', 'deploy-module-js'),
+    'fix-permissions',
     'install-module', 'restart-nodered'), function () { });
