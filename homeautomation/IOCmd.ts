@@ -1,9 +1,11 @@
 export class IOCmd {
-    private source: string;
-    constructor(source: string) {
-        this.source = source;
-    }
-    public getSource(): string {
-        return this.source;
+    public srcNode: string;
+    public srcIo: string;
+    public value: any;
+
+    constructor(srcNode: string, srcIo: string, value: any) {
+        this.srcNode = srcNode;
+        this.srcIo = srcIo;
+        this.value = value;
     }
 }

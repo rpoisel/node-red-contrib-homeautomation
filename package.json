@@ -29,6 +29,7 @@
     "author": "Rainer Poisel",
     "node-red": {
         "nodes": {
+            "io": "homeautomation/ioNode.js",
             "i2cConfig": "homeautomation/i2cConfigNode.js",
             "inputsModule": "homeautomation/inputsNode.js",
             "blind": "homeautomation/blindNode.js",

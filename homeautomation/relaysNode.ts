@@ -6,14 +6,14 @@ interface IRelaysNode extends Node {
 }
 
 interface IRelaysProperties extends NodeProperties {
-    input0: string;
-    input1: string;
-    input2: string;
-    input3: string;
-    input4: string;
-    input5: string;
-    input6: string;
-    input7: string;
+    output0: string;
+    output1: string;
+    output2: string;
+    output3: string;
+    output4: string;
+    output5: string;
+    output6: string;
+    output7: string;
 }
 
 export = (RED: Red) => {

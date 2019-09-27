@@ -3,7 +3,11 @@
         category: 'Home Automation',
         color: '#a6bbcf',
         defaults: {
-            name: { value: "" }
+            name: { value: "" },
+            in0: { type: "io", required: true },
+            in1: { type: "io", required: true },
+            out0: { type: "io", required: true },
+            out1: { type: "io", required: true },
         },
         inputs: 1,
         outputs: 1,
@@ -18,6 +22,22 @@
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-in0"><i class="icon-tag"></i> Input 0</label>
+        <input type="text" id="node-input-in0">
+    </div>
+    <div class="form-row">
+        <label for="node-input-in1"><i class="icon-tag"></i> Input 1</label>
+        <input type="text" id="node-input-in1">
+    </div>
+    <div class="form-row">
+        <label for="node-input-out0"><i class="icon-tag"></i> Output 0</label>
+        <input type="text" id="node-input-out0">
+    </div>
+    <div class="form-row">
+        <label for="node-input-out1"><i class="icon-tag"></i> Output 1</label>
+        <input type="text" id="node-input-out1">
     </div>
 </script>
 

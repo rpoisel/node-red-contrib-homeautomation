@@ -5,7 +5,15 @@
         defaults: {
             bus: { type: "i2cConfig", required: true },
             name: { value: "" },
-            address: { value: "" }
+            address: { value: "" },
+            in0: { type: "io", required: false },
+            in1: { type: "io", required: false },
+            in2: { type: "io", required: false },
+            in3: { type: "io", required: false },
+            in4: { type: "io", required: false },
+            in5: { type: "io", required: false },
+            in6: { type: "io", required: false },
+            in7: { type: "io", required: false },
         },
         inputs: 1,
         outputs: 1,
@@ -23,11 +31,43 @@
     </div>
     <div class="form-row">
         <label for="node-input-bus"><i class="icon-tag"></i> Bus</label>
-        <input type="text" id="node-input-bus" placeholder="Bus">
+        <input type="text" id="node-input-bus">
     </div>
     <div class="form-row">
         <label for="node-input-address"><i class="icon-tag"></i> Address</label>
         <input type="text" id="node-input-address" placeholder="0x20">
+    </div>
+    <div class="form-row">
+        <label for="node-input-in0"><i class="icon-tag"></i> Input 0</label>
+        <input type="text" id="node-input-in0">
+    </div>
+    <div class="form-row">
+        <label for="node-input-in1"><i class="icon-tag"></i> Input 1</label>
+        <input type="text" id="node-input-in1">
+    </div>
+    <div class="form-row">
+        <label for="node-input-in2"><i class="icon-tag"></i> Input 2</label>
+        <input type="text" id="node-input-in2">
+    </div>
+    <div class="form-row">
+        <label for="node-input-in3"><i class="icon-tag"></i> Input 3</label>
+        <input type="text" id="node-input-in3">
+    </div>
+    <div class="form-row">
+        <label for="node-input-in4"><i class="icon-tag"></i> Input 4</label>
+        <input type="text" id="node-input-in4">
+    </div>
+    <div class="form-row">
+        <label for="node-input-in5"><i class="icon-tag"></i> Input 5</label>
+        <input type="text" id="node-input-in5">
+    </div>
+    <div class="form-row">
+        <label for="node-input-in6"><i class="icon-tag"></i> Input 6</label>
+        <input type="text" id="node-input-in6">
+    </div>
+    <div class="form-row">
+        <label for="node-input-in7"><i class="icon-tag"></i> Input 7</label>
+        <input type="text" id="node-input-in7">
     </div>
 </script>
 
