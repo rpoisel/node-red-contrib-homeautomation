@@ -26,9 +26,15 @@ gulp.task('build-module', function () {
 
 gulp.task('tslint', () => gulp.src('homeautomation/*.ts').pipe(tslint({ formatter: "stylish" })).pipe(tslint.report()));
 
+gulp.task('stop-nodered', function () {
+  return gulpSSH
+    .exec(['systemctl stop nodered.service'], { filePath: 'commands.log' })
+    .pipe(gulp.dest('logs'));
+})
+
 gulp.task('uninstall-module', function () {
   return gulpSSH
-    .shell(['docker exec -w /data/mynodes nodered npm uninstall node-red-contrib-homeautomation'], { filePath: 'commands.log' })
+    .shell(["cd /home/rpoisel/.node-red", "npm uninstall node-red-contrib-homeautomation"], { filePath: 'commands.log' })
     .pipe(gulp.dest('logs'));
 })
 
@@ -64,19 +70,20 @@ gulp.task('fix-permissions', function () {
 
 gulp.task('install-module', function () {
   return gulpSSH
-    .shell(['docker exec -w /data/mynodes nodered npm install node-red-contrib-homeautomation'], { filePath: 'commands.log' })
+    .shell(["cd /home/rpoisel/.node-red", "npm install ../node-red-data/mynodes/node-red-contrib-homeautomation"], { filePath: 'commands.log' })
     .pipe(gulp.dest('logs'));
 })
 
-gulp.task('restart-nodered', function () {
+gulp.task('start-nodered', function () {
   return gulpSSH
-    .exec(['systemctl restart nodered.service'], { filePath: 'commands.log' })
+    .exec(['systemctl start nodered.service'], { filePath: 'commands.log' })
     .pipe(gulp.dest('logs'));
 })
 
 gulp.task('default',
   gulp.series(
-    'tslint', 'build-module', 'uninstall-module', 'remove-module',
+    'tslint', 'build-module',
+    'stop-nodered', 'uninstall-module', 'remove-module',
     gulp.parallel('deploy-module-meta', 'deploy-module-html', 'deploy-module-js'),
     'fix-permissions',
-    'install-module', 'restart-nodered'), function () { });
+    'install-module', 'start-nodered'), function () { });
