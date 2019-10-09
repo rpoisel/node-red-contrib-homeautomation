@@ -2,15 +2,10 @@ import { FSM } from "./FSM";
 import { StateStop } from "./StateStop";
 
 export class Blind {
-    private id: string;
     private fsm: FSM;
 
-    constructor(id: string) {
-        this.id = id;
+    constructor() {
         this.fsm = new FSM(new StateStop());
-    }
-    public getId(): string {
-        return this.id;
     }
     public buttonUp(): void {
         this.fsm.buttonUp();

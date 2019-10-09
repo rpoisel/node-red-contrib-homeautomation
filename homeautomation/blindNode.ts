@@ -17,7 +17,7 @@ interface IBlindProperties extends NodeProperties {
 export = (RED: Red) => {
     RED.nodes.registerType("blind", function (this: IBlindNode, props: IBlindProperties) {
         this.name = props.name;
-        this.blind = new Blind(props.name);
+        this.blind = new Blind();
 
         this.on("input", (msg: IOMsg) => {
             // const ioCmd = msg.payload as IOCmdDigital;
