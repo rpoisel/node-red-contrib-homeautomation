@@ -20,7 +20,7 @@
         "gulp-shell": "^0.7.1",
         "gulp-tslint": "^8.1.4",
         "gulp-typescript": "^5.0.1",
-        "node-red": "^0.20.7",
+        "node-red": "^3.0.2",
         "tslint": "^5.20.0"
     },
     "keywords": [
